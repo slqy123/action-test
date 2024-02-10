@@ -2,7 +2,7 @@ from pathlib import Path
 
 p = Path('fonts')
 
-from pywinauto.linux.application import Application
+from pywinauto.application import Application
 
 
 origin_names = ['スーラ', 'ニューシネマ', 'ハミング']
@@ -11,6 +11,9 @@ modifed_names = ['微软雅黑', '霞鹜文楷 屏幕阅读版', '霞鹜新晰�
 sizes = [12, 21, 30, 39]
 
 apps = []
+
+fp = Path('C:/Windows/Fonts/')
+print(fp.exists(), list(fp.iterdir()))
 
 for origin_name, modifed_name in zip(origin_names, modifed_names):
     for size in sizes:
