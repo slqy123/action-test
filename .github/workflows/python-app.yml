@@ -29,7 +29,8 @@ jobs:
         pip install pywinauto
     - name: install fonts
       run: |
-        _scripts/install_fonts.ps1
+        $fonts = (New-Object -ComObject Shell.Application).Namespace(0x14)
+        Get-ChildItem -Recurse -include fonts/*.ttf | % { $fonts.CopyHere($_.fullname) }
     - name: gen fonts
       run: |
         python _scripts/gen_fonts.py

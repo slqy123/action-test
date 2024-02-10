@@ -13,10 +13,7 @@ sizes = [12, 21, 30, 39]
 apps = []
 
 fp = Path('C:/Windows/Fonts/')
-print(fp.exists(), list(fp.iterdir()))
-
-print(Path().absolute())
-print(((Path() / 'AppData/Local/Microsoft/Windows/Fonts').iterdir()))
+print(fp.exists(), list(fp.iterdir()),Path().absolute(), ((Path() / 'AppData/Local/Microsoft/Windows/Fonts').iterdir()))
 
 for origin_name, modifed_name in zip(origin_names, modifed_names):
     for size in sizes:
