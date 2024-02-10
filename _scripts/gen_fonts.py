@@ -1,4 +1,5 @@
 from pathlib import Path
+from time import sleep
 
 p = Path('fonts')
 
@@ -16,12 +17,14 @@ apps = []
 fp = Path('C:/Windows/Fonts/')
 for ft in p.iterdir():
     shutil.move(ft, fp / ft.name)
-print(fp.exists(), list(fp.iterdir()),Path().absolute())
+print(fp.exists(), Path().absolute(), list(Path('C:\\Users').iterdir()))
+print(Path.home().absolute())
 
 for origin_name, modifed_name in zip(origin_names, modifed_names):
     for size in sizes:
         app = Application().start('assets/krkrfont.exe') 
         win = app.window()
+        sleep(1)
         print(win.TComboBox1.ItemTexts())
         win.TComboBox1.select(modifed_name)
         win.TEdit2.set_text(str(size))
