@@ -22,8 +22,8 @@ for origin_name, modifed_name in zip(origin_names, modifed_names):
     for size in sizes:
         app = Application().start('assets/krkrfont.exe') 
         win = app.window()
-        win.TComboBox1.select(modifed_name)
         print(win.TComboBox1.ItemTexts())
+        win.TComboBox1.select(modifed_name)
         win.TEdit2.set_text(str(size))
         for i in (1, 3, 4):
             win[f'TCheckBox{i}'].check()
