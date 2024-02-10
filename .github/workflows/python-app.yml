@@ -27,6 +27,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pywinauto
-    - name: Lint with flake8
+    - name: install fonts
+      run: |
+        _scripts/install_fonts.ps1
+    - name: gen fonts
       run: |
         python _scripts/gen_fonts.py

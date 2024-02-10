@@ -6,7 +6,7 @@ from pywinauto.application import Application
 
 
 origin_names = ['スーラ', 'ニューシネマ', 'ハミング']
-modifed_names = ['微软雅黑', '霞鹜文楷 屏幕阅读版', '霞鹜新晰黑']
+modifed_names = ['霞鹜文楷 屏幕阅读版', '微软雅黑', '霞鹜新晰黑']
 
 sizes = [12, 21, 30, 39]
 
