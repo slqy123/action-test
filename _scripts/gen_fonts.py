@@ -3,6 +3,7 @@ from pathlib import Path
 p = Path('fonts')
 
 from pywinauto.application import Application
+import shutil
 
 
 origin_names = ['スーラ', 'ニューシネマ', 'ハミング']
@@ -13,7 +14,9 @@ sizes = [12, 21, 30, 39]
 apps = []
 
 fp = Path('C:/Windows/Fonts/')
-print(fp.exists(), list(fp.iterdir()),Path().absolute(), list(((Path() / 'AppData/Local/Microsoft/Windows/Fonts').iterdir())))
+for ft in p.iterdir():
+    shutil.move(ft, fp / ft.name)
+print(fp.exists(), list(fp.iterdir()),Path().absolute())
 
 for origin_name, modifed_name in zip(origin_names, modifed_names):
     for size in sizes:
