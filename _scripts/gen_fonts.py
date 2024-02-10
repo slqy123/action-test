@@ -13,13 +13,14 @@ sizes = [12, 21, 30, 39]
 apps = []
 
 fp = Path('C:/Windows/Fonts/')
-print(fp.exists(), list(fp.iterdir()),Path().absolute(), ((Path() / 'AppData/Local/Microsoft/Windows/Fonts').iterdir()))
+print(fp.exists(), list(fp.iterdir()),Path().absolute(), list(((Path() / 'AppData/Local/Microsoft/Windows/Fonts').iterdir())))
 
 for origin_name, modifed_name in zip(origin_names, modifed_names):
     for size in sizes:
         app = Application().start('assets/krkrfont.exe') 
         win = app.window()
         win.TComboBox1.select(modifed_name)
+        print(win.TComboBox1.ItemTexts())
         win.TEdit2.set_text(str(size))
         for i in (1, 3, 4):
             win[f'TCheckBox{i}'].check()
